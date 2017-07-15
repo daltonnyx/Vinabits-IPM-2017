@@ -128,6 +128,8 @@
     <Compile Include="BusinessObjects\Enumeration\ProjectStatusEnum.cs" />
     <Compile Include="BusinessObjects\Enumeration\TinhTrangDuThau.cs" />
     <Compile Include="BusinessObjects\Enumeration\TinhTrangGoiThau.cs" />
+    <Compile Include="BusinessObjects\FileUploads.cs" />
+    <Compile Include="BusinessObjects\IMultiUpload.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\ConnectionHelper.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\Department.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\Department.Designer.cs">
@@ -140,6 +142,10 @@
     <Compile Include="BusinessObjects\IPMModelCode\Employee.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\IPMModelCode\FleAttachments.cs" />
+    <Compile Include="BusinessObjects\IPMModelCode\FleAttachments.Designer.cs">
+      <DependentUpon>FleAttachments.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\IPMModelCode\GoiThau.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\GoiThau.Designer.cs">
@@ -199,10 +205,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BusinessObjects\IPMModel.xpo" />
-    <None Include="BusinessObjects\IPMModel.xpo.diagram">
-      <DependentUpon>IPMModel.xpo</DependentUpon>
-    </None>
     <None Include="DatabaseUpdate\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
