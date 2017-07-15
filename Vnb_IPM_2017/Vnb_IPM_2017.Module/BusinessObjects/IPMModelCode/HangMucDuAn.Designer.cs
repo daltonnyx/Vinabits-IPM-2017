@@ -92,6 +92,13 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
             get { return fDuAn; }
             set { SetPropertyValue<DuAn>("DuAn", ref fDuAn, value); }
         }
+        string fTienDo;
+        [DevExpress.Xpo.DisplayName(@"Tiến độ")]
+        public string TienDo
+        {
+            get { return fTienDo; }
+            set { SetPropertyValue<string>("TienDo", ref fTienDo, value); }
+        }
     }
 
 }

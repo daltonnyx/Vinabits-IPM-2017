@@ -14,6 +14,7 @@ using System.ComponentModel;
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
+    [DevExpress.Persistent.Base.DefaultClassOptions]
     public partial class DuAn : XPObject
     {
         string fTenDuAn;
@@ -91,12 +92,6 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
         {
             get { return fLoaiDuAn; }
             set { SetPropertyValue<LoaiDuAn>("LoaiDuAn", ref fLoaiDuAn, value); }
-        }
-        string fTienDo;
-        public string TienDo
-        {
-            get { return fTienDo; }
-            set { SetPropertyValue<string>("TienDo", ref fTienDo, value); }
         }
         NhanVien fTruongDuAn;
         [Association(@"DuAnReferencesNhanVien")]
