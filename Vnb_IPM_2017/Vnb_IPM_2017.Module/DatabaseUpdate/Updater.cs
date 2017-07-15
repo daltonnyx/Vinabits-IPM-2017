@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+using Vnb_IPM_2017.Module.BusinessObjects;
 
 namespace Vnb_IPM_2017.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppUpdatingModuleUpdatertopic.aspx
@@ -26,30 +27,30 @@ namespace Vnb_IPM_2017.Module.DatabaseUpdate {
             //    theObject = ObjectSpace.CreateObject<DomainObject1>();
             //    theObject.Name = name;
             //}
-            PermissionPolicyUser sampleUser = ObjectSpace.FindObject<PermissionPolicyUser>(new BinaryOperator("UserName", "User"));
+            NhanVien sampleUser = ObjectSpace.FindObject<NhanVien>(new BinaryOperator("UserName", "User"));
             if(sampleUser == null) {
-                sampleUser = ObjectSpace.CreateObject<PermissionPolicyUser>();
+                sampleUser = ObjectSpace.CreateObject<NhanVien>();
                 sampleUser.UserName = "User";
                 sampleUser.SetPassword("");
             }
-            PermissionPolicyRole defaultRole = CreateDefaultRole();
-            sampleUser.Roles.Add(defaultRole);
+            QuyenNhanVien defaultRole = CreateDefaultRole();
+            sampleUser.QuyenNhanViens.Add(defaultRole);
 
-            PermissionPolicyUser userAdmin = ObjectSpace.FindObject<PermissionPolicyUser>(new BinaryOperator("UserName", "Admin"));
+            NhanVien userAdmin = ObjectSpace.FindObject<NhanVien>(new BinaryOperator("UserName", "Admin"));
             if(userAdmin == null) {
-                userAdmin = ObjectSpace.CreateObject<PermissionPolicyUser>();
+                userAdmin = ObjectSpace.CreateObject<NhanVien>();
                 userAdmin.UserName = "Admin";
                 // Set a password if the standard authentication type is used
                 userAdmin.SetPassword("");
             }
-			// If a role with the Administrators name doesn't exist in the database, create this role
-            PermissionPolicyRole adminRole = ObjectSpace.FindObject<PermissionPolicyRole>(new BinaryOperator("Name", "Administrators"));
+            // If a role with the Administrators name doesn't exist in the database, create this role
+            QuyenNhanVien adminRole = ObjectSpace.FindObject<QuyenNhanVien>(new BinaryOperator("Name", "Administrators"));
             if(adminRole == null) {
-                adminRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+                adminRole = ObjectSpace.CreateObject<QuyenNhanVien>();
                 adminRole.Name = "Administrators";
             }
             adminRole.IsAdministrative = true;
-			userAdmin.Roles.Add(adminRole);
+			userAdmin.QuyenNhanViens.Add(adminRole);
             ObjectSpace.CommitChanges(); //This line persists created object(s).
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
@@ -58,19 +59,12 @@ namespace Vnb_IPM_2017.Module.DatabaseUpdate {
             //    RenameColumn("DomainObject1Table", "OldColumnName", "NewColumnName");
             //}
         }
-        private PermissionPolicyRole CreateDefaultRole() {
-            PermissionPolicyRole defaultRole = ObjectSpace.FindObject<PermissionPolicyRole>(new BinaryOperator("Name", "Default"));
+        private QuyenNhanVien CreateDefaultRole() {
+            QuyenNhanVien defaultRole = ObjectSpace.FindObject<QuyenNhanVien>(new BinaryOperator("Name", "Default"));
             if(defaultRole == null) {
-                defaultRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+                defaultRole = ObjectSpace.CreateObject<QuyenNhanVien>();
                 defaultRole.Name = "Default";
-
-				defaultRole.AddObjectPermission<PermissionPolicyUser>(SecurityOperations.Read, "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
-                defaultRole.AddNavigationPermission(@"Application/NavigationItems/Items/Default/Items/MyDetails", SecurityPermissionState.Allow);
-				defaultRole.AddMemberPermission<PermissionPolicyUser>(SecurityOperations.Write, "ChangePasswordOnFirstLogon", "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
-				defaultRole.AddMemberPermission<PermissionPolicyUser>(SecurityOperations.Write, "StoredPassword", "[Oid] = CurrentUserId()", SecurityPermissionState.Allow);
-                defaultRole.AddTypePermissionsRecursively<PermissionPolicyRole>(SecurityOperations.Read, SecurityPermissionState.Deny);
-                defaultRole.AddTypePermissionsRecursively<ModelDifference>(SecurityOperations.ReadWriteAccess, SecurityPermissionState.Allow);
-                defaultRole.AddTypePermissionsRecursively<ModelDifferenceAspect>(SecurityOperations.ReadWriteAccess, SecurityPermissionState.Allow);
+				defaultRole.AddObjectAccessPermission<NhanVien>( "[Oid] = CurrentUserId()",SecurityOperations.Read);
             }
             return defaultRole;
         }

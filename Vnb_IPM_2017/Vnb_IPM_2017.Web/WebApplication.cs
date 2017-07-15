@@ -83,7 +83,6 @@ namespace Vnb_IPM_2017.Web {
             this.module4 = new Vnb_IPM_2017.Module.Web.Vnb_IPM_2017AspNetModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
-            this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
             this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
             this.objectsModule = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.chartModule = new DevExpress.ExpressApp.Chart.ChartModule();
@@ -101,28 +100,32 @@ namespace Vnb_IPM_2017.Web {
             // securityStrategyComplex1
             // 
             this.securityStrategyComplex1.Authentication = this.authenticationStandard1;
-            this.securityStrategyComplex1.RoleType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole);
-            this.securityStrategyComplex1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
-            // 
-            // securityModule1
-            // 
-            this.securityModule1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
+            this.securityStrategyComplex1.RoleType = typeof(Vnb_IPM_2017.Module.BusinessObjects.QuyenNhanVien);
+            this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
+            this.securityStrategyComplex1.UserType = typeof(Vnb_IPM_2017.Module.BusinessObjects.NhanVien);
             // 
             // authenticationStandard1
             // 
             this.authenticationStandard1.LogonParametersType = typeof(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters);
-            //
+            // 
             // dashboardsModule
-            //
+            // 
             this.dashboardsModule.DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.DashboardData);
-            //
+            // 
             // reportsModuleV2
-            //
+            // 
             this.reportsModuleV2.EnableInplaceReports = true;
             this.reportsModuleV2.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.ReportDataV2);
-            this.reportsModuleV2.ShowAdditionalNavigation = false;
-            this.reportsAspNetModuleV2.ReportViewerType = DevExpress.ExpressApp.ReportsV2.Web.ReportViewerTypes.HTML5;
             this.reportsModuleV2.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
+            // 
+            // reportsAspNetModuleV2
+            // 
+            this.reportsAspNetModuleV2.ReportViewerType = DevExpress.ExpressApp.ReportsV2.Web.ReportViewerTypes.HTML5;
+            // 
+            // validationModule
+            // 
+            this.validationModule.AllowValidationDetailsAccess = true;
+            this.validationModule.IgnoreWarningAndInformationRules = false;
             // 
             // Vnb_IPM_2017AspNetApplication
             // 
@@ -130,21 +133,21 @@ namespace Vnb_IPM_2017.Web {
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.objectsModule);
+            this.Modules.Add(this.chartModule);
+            this.Modules.Add(this.conditionalAppearanceModule);
+            this.Modules.Add(this.dashboardsModule);
+            this.Modules.Add(this.reportsModuleV2);
+            this.Modules.Add(this.validationModule);
             this.Modules.Add(this.module3);
+            this.Modules.Add(this.chartAspNetModule);
+            this.Modules.Add(this.dashboardsAspNetModule);
+            this.Modules.Add(this.htmlPropertyEditorAspNetModule);
+            this.Modules.Add(this.reportsAspNetModuleV2);
+            this.Modules.Add(this.validationAspNetModule);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
             this.Security = this.securityStrategyComplex1;
-            this.Modules.Add(this.objectsModule);
-            this.Modules.Add(this.chartModule);
-            this.Modules.Add(this.chartAspNetModule);
-            this.Modules.Add(this.conditionalAppearanceModule);
-            this.Modules.Add(this.dashboardsModule);
-            this.Modules.Add(this.dashboardsAspNetModule);
-            this.Modules.Add(this.htmlPropertyEditorAspNetModule);
-            this.Modules.Add(this.reportsModuleV2);
-            this.Modules.Add(this.reportsAspNetModuleV2);
-            this.Modules.Add(this.validationModule);
-            this.Modules.Add(this.validationAspNetModule);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.Vnb_IPM_2017AspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
