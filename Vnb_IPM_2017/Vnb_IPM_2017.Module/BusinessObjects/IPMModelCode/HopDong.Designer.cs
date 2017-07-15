@@ -14,7 +14,8 @@ using System.ComponentModel;
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
-    public partial class HopDong : XPObject
+    [DevExpress.Persistent.Base.DefaultClassOptions]
+    public partial class HopDong : FleAttachments
     {
         string fSoHopDong;
         [Indexed(Name = @"sohd_idx")]

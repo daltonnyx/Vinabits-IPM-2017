@@ -14,6 +14,7 @@ using System.ComponentModel;
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
+    [DevExpress.Persistent.Base.DefaultClassOptions]
     public partial class GoiThau : XPObject
     {
         string fMaGoiThau;

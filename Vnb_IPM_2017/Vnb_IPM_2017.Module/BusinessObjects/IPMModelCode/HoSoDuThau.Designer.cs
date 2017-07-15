@@ -14,7 +14,8 @@ using System.ComponentModel;
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
-    public partial class HoSoDuThau : XPObject
+    [DevExpress.Persistent.Base.DefaultClassOptions]
+    public partial class HoSoDuThau : FleAttachments
     {
         GoiThau fGoiThau;
         [Indexed(Name = @"goithau_idx")]
