@@ -171,10 +171,6 @@
     <Compile Include="BusinessObjects\IPMModelCode\HoSoMoiThau.Designer.cs">
       <DependentUpon>HoSoMoiThau.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\IPMModelCode\KeHoachDauThau.cs" />
-    <Compile Include="BusinessObjects\IPMModelCode\KeHoachDauThau.Designer.cs">
-      <DependentUpon>KeHoachDauThau.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\IPMModelCode\LoaiDuAn.cs" />
     <Compile Include="BusinessObjects\IPMModelCode\LoaiDuAn.Designer.cs">
       <DependentUpon>LoaiDuAn.cs</DependentUpon>
