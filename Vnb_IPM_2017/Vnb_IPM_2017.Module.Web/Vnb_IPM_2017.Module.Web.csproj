@@ -147,6 +147,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\PropertyEditors\ASPxUploadToFileUploadsEditors.cs" />
+    <Compile Include="Editors\PropertyEditors\MultiFileUploadEditor.cs" />
+    <Compile Include="Editors\PropertyEditors\OMWebLookupEditor.cs" />
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>
     </Compile>
