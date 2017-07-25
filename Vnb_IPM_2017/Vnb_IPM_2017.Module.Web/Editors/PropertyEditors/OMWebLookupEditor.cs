@@ -8,6 +8,7 @@ using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Vnb_IPM_2017.Module.BusinessObjects;
@@ -44,20 +45,22 @@ namespace Vnb_IPM_2017.Module.Web.PropertyEditors
 
                 if (control.Text == control.Value.ToString())
                 {
-                    XPObject doc = View.CurrentObject as XPObject;
+                    XPLiteObject doc = View.CurrentObject as XPLiteObject;
+                    Type ObjType = CurrentObject.GetType();
                     UnitOfWork uow = new UnitOfWork(doc.Session.DataLayer);
 
-                    HinhThucThanhToan currentOrganization = uow.FindObject<HinhThucThanhToan>(new BinaryOperator("TieuDe", control.Text));
-                    if (currentOrganization == null)
+                    HinhThucThanhToan current = uow.FindObject<HinhThucThanhToan>(new BinaryOperator("TieuDe", control.Text));
+                    if (current == null)
                     {
-                        currentOrganization = new HinhThucThanhToan(uow);
-                        currentOrganization.TieuDe = control.Text;
-                        currentOrganization.Save();
+                        current = new HinhThucThanhToan(uow);
+                        current.TieuDe = control.Text;
+                        current.Save();
                         uow.CommitTransaction();
                     }
-                    //doc.DocOrganization = doc.Session.GetObjectByKey<HinhThucThanhToan>(currentOrganization.Oid);
-                    //doc.Save();
-                    //doc.Session.CommitTransaction();
+                    PropertyInfo TieuDe = ObjType.GetProperty("HinhThucThanhToan");
+                    TieuDe.SetValue(doc, doc.Session.GetObjectByKey<HinhThucThanhToan>(current.Oid));
+                    doc.Save();
+                    doc.Session.CommitTransaction();
                 }
             }
         }
