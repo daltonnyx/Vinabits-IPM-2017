@@ -11,6 +11,8 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.Persistent.Base;
+
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
@@ -18,6 +20,7 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
     {
         long fOid;
         [Key(true)]
+        [VisibleInDetailView(false), VisibleInListView(false)]
         public long Oid
         {
             get { return fOid; }
