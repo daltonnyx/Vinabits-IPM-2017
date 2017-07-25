@@ -1,0 +1,120 @@
+body:not(.dialog) {
+    background-image: url('../images/background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.sizeLimit {
+    max-width: calc(100% - 60px);
+}
+
+.dxnbLite_XafTheme {
+    font: 16px Arial,Tahoma,Geneva,Sans-serif;
+    color: #111;
+}
+
+.XafVCap-First {
+    color: #333;
+}
+.Caption, .dxpnlControl_XafTheme, .dxeBase_XafTheme {
+    color: #000;
+}
+
+#headerTableDiv {
+    background-color: transparent;
+    position: relative;
+    border: none;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.85), inset 0px 0px 10px 9px rgba(255,255,255,.7);
+}
+#headerTableDiv:before {
+     content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(255,255,255,.80),rgba(255,255,255,.80)), url('../images/background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    filter: blur(8px);
+}
+#headerTableDiv .white {
+    background: transparent;
+}
+.xafNav > .xafContent {
+    background-color: transparent;
+}
+
+.xafNav > .xafContent > .NavBarLiteAC {
+    background-color: transparent !important;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35), 0px 0px 20px 0px rgba(0,0,0,.85);
+}
+
+
+body:not(.dialog) .xafNav .dxnb-content {
+    background-color: transparent;
+    position: relative;
+    box-shadow: inset 0px 0px 15px 9px rgba(255,255,255,.7);
+}
+
+body:not(.dialog) .xafNav .dxnb-content:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(255,255,255,.80),rgba(255,255,255,.80)), url('../images/background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    filter: blur(8px);
+}
+
+
+body:not(.dialog) .xafNav > .xafContent > .NavBarLiteAC .dxnbLite_XafTheme {
+    background: transparent;
+}
+
+body:not(.dialog) .xafNav > .xafContent > .NavBarLiteAC .dxnbLite_XafTheme .dxnb-item {
+    background: transparent;
+}
+body:not(.dialog) .xafNav > .xafContent > .NavBarLiteAC .dxnbLite_XafTheme .dxnb-itemSelected {
+    position: relative;
+     box-shadow: inset 0px 0px 15px 10px rgba(44,134,211,.60);
+}
+body:not(.dialog) .xafNav > .xafContent > .NavBarLiteAC .dxnbLite_XafTheme .dxnb-itemSelected:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(44,134,211,.60),rgba(44,134,211,.60)), url('../images/background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    filter: blur(5px);
+}
+
+body:not(.dialog) div#content {
+    padding: 0px 15px;
+    position: relative;
+    margin-top: 21px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35), 0px 0px 20px 0px rgba(0,0,0,.85), 0px 0px 5px 0px rgba(0, 0, 0, 0.35), inset 0px 0px 15px 9px rgba(255,255,255,.7);
+}
+
+body:not(.dialog) div#content:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to top, rgba(255,255,255,.80),rgba(255,255,255,.80)), url('../images/background.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    filter: blur(8px);
+}
