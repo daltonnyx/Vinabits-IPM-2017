@@ -11,6 +11,8 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Model;
+
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
@@ -64,6 +66,7 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
         }
         HinhThucThanhToan fHinhThucThanhToan;
         [DevExpress.Xpo.DisplayName(@"Hình thức thanh toán")]
+        [ModelDefault("PropertyEditorType", "Vnb_IPM_2017.Module.Web.PropertyEditors.OMWebLookupEditor")]
         public HinhThucThanhToan HinhThucThanhToan
         {
             get { return fHinhThucThanhToan; }
