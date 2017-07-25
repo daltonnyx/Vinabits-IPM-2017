@@ -31,5 +31,6 @@
     <cc4:ASPxProgressControl ID="ProgressControl" runat="server" />
     <div runat="server" id="Content" />
     </form>
+    <link rel="stylesheet" href="/assets/css/style.css" />
 </body>
 </html>

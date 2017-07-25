@@ -19,5 +19,8 @@
         <div id="Content" runat="server" />
         </form>
     </div>
+    
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    
 </body>
 </html>
