@@ -11,6 +11,8 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Model;
+
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
@@ -39,12 +41,13 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
             get { return fGiaTriThanhToan; }
             set { SetPropertyValue<string>("GiaTriThanhToan", ref fGiaTriThanhToan, value); }
         }
-        HinhThucThanhToan fHinhThucThanToan;
+        HinhThucThanhToan fHinhThucThanhToan;
         [DevExpress.Xpo.DisplayName(@"Hình thức thanh toán")]
-        public HinhThucThanhToan HinhThucThanToan
+        [ModelDefault("PropertyEditorType", "Vnb_IPM_2017.Module.Web.PropertyEditors.OMWebLookupEditor")]
+        public HinhThucThanhToan HinhThucThanhToan
         {
-            get { return fHinhThucThanToan; }
-            set { SetPropertyValue<HinhThucThanhToan>("HinhThucThanToan", ref fHinhThucThanToan, value); }
+            get { return fHinhThucThanhToan; }
+            set { SetPropertyValue<HinhThucThanhToan>("HinhThucThanhToan", ref fHinhThucThanhToan, value); }
         }
     }
 
