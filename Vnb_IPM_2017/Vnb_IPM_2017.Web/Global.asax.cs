@@ -39,6 +39,9 @@ namespace Vnb_IPM_2017.Web {
             if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
                 WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             }
+            //Use Custom Theme
+            WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = "VerticalDefault.ascx";
+            WebApplication.Instance.Settings.LogonTemplateContentPath = "LoginNew.ascx";
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
