@@ -190,6 +190,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\background.jpg" />
+    <Content Include="assets\images\logo.png" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
@@ -208,6 +212,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginNew.ascx.cs">
+      <DependentUpon>LoginNew.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginNew.ascx.designer.cs">
+      <DependentUpon>LoginNew.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalDefault.ascx.cs">
+      <DependentUpon>VerticalDefault.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerticalDefault.ascx.designer.cs">
+      <DependentUpon>VerticalDefault.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebApplication.cs">
       <SubType>Component</SubType>
@@ -234,6 +252,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LoginNew.ascx" />
     <Content Include="Model.xafml">
       <SubType>Designer</SubType>
     </Content>
@@ -252,6 +271,7 @@
     <Content Include="Model.Desktop.xafml" />
     <Content Include="Model.Tablet.xafml" />
     <None Include="ReadMe.txt" />
+    <Content Include="VerticalDefault.ascx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
