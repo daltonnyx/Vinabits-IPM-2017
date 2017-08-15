@@ -11,10 +11,13 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.Persistent.Base;
+
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
     [DevExpress.Persistent.Base.DefaultClassOptions]
+    [DefaultProperty("TenGoiThau")]
     public partial class GoiThau : XPObject
     {
         string fMaGoiThau;
@@ -35,6 +38,7 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
         }
         DuAn fDuAn;
         [Association(@"GoiThauReferencesDuAn")]
+        [ImmediatePostData]
         [DevExpress.Xpo.DisplayName(@"Dự án")]
         public DuAn DuAn
         {
@@ -64,6 +68,7 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
         }
         HangMucDuAn fHangMuc;
         [DevExpress.Xpo.DisplayName(@"Hạng mục")]
+        [DataSourceCriteria(@"DuAn.Oid = '@This.DuAn.Oid'")]
         public HangMucDuAn HangMuc
         {
             get { return fHangMuc; }

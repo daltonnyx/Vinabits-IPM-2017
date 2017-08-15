@@ -16,6 +16,8 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.Xpo;
+using DevExpress.ExpressApp.ReportsV2;
+using Vnb_IPM_2017.Module.Reports;
 
 namespace Vnb_IPM_2017.Module {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
@@ -26,7 +28,12 @@ namespace Vnb_IPM_2017.Module {
         }
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
-            return new ModuleUpdater[] { updater };
+            PredefinedReportsUpdater predefinedReportsUpdater =
+                new PredefinedReportsUpdater(Application, objectSpace, versionFromDB);
+                    predefinedReportsUpdater.AddPredefinedReport<DuAnReport>("Báo cáo dự án", typeof(BusinessObjects.NonPersistents.DuAnReportObject));
+                    predefinedReportsUpdater.AddPredefinedReport<DuToanChiTietReport>("Báo cáo dự toán", typeof(BusinessObjects.CongViecDuAn),typeof(BusinessObjects.NonPersistents.DuToanReportParameter) );
+            predefinedReportsUpdater.AddPredefinedReport<QuyetToanChiTietReport>("Báo cáo quyết toán", typeof(BusinessObjects.CongViecDuAn), typeof(BusinessObjects.NonPersistents.QuyetToanReportParameter));
+            return new ModuleUpdater[] { updater, predefinedReportsUpdater };
         }
         public override void Setup(XafApplication application) {
             base.Setup(application);

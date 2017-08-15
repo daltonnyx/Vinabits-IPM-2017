@@ -12,14 +12,14 @@ namespace Vnb_IPM_2017.Module.BusinessObjects.Enumeration
         [XafDisplayName("Đang chuẩn bị")]
         DangChuanBi = 0,
         [XafDisplayName("Mời thầu")]
-        MoiThau = 2,
+        MoiThau = 1,
         [XafDisplayName("Dự thầu")]
-        DuThau = 3,
+        DuThau = 2,
         [XafDisplayName("Mở thầu")]
-        MoThau = 4,
+        MoThau = 3,
         [XafDisplayName("Chấm thầu")]
-        ChamThau = 5,
+        ChamThau = 4,
         [XafDisplayName("Ký hợp đồng")]
-        KyHopDong = 6,
+        KyHopDong = 5,
     }
 }

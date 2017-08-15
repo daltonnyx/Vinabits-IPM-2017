@@ -11,9 +11,11 @@ using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
+using DevExpress.ExpressApp.Model;
+
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
-
+    [DefaultProperty("TieuDe")]
     public partial class HangMucDuAn : XPObject
     {
         string fTieuDe;
@@ -92,12 +94,13 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
             get { return fDuAn; }
             set { SetPropertyValue<DuAn>("DuAn", ref fDuAn, value); }
         }
-        string fTienDo;
+        int fTienDo;
         [DevExpress.Xpo.DisplayName(@"Tiến độ")]
-        public string TienDo
+        [ModelDefault("PropertyEditorType", "Vnb_IPM_2017.Module.Web.PropertyEditors.ASPxTrackBarEditors")]
+        public int TienDo
         {
             get { return fTienDo; }
-            set { SetPropertyValue<string>("TienDo", ref fTienDo, value); }
+            set { SetPropertyValue<int>("TienDo", ref fTienDo, value); }
         }
     }
 

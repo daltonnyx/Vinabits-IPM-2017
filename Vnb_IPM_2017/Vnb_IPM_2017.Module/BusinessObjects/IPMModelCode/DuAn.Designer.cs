@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 namespace Vnb_IPM_2017.Module.BusinessObjects
 {
-
+    [DefaultProperty("TenDuAn")]
     [DevExpress.Persistent.Base.DefaultClassOptions]
     public partial class DuAn : XPObject
     {
@@ -107,6 +107,9 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
         [DevExpress.Xpo.DisplayName(@"Gói thầu")]
         [Association(@"GoiThauReferencesDuAn")]
         public XPCollection<GoiThau> GoiThaus { get { return GetCollection<GoiThau>("GoiThaus"); } }
+        [DevExpress.Xpo.DisplayName(@"Công việc")]
+        [Association(@"DuAn-Chitiets")]
+        public XPCollection<CongViecDuAn> CongViecs { get { return GetCollection<CongViecDuAn>("CongViecs"); } }
     }
 
 }

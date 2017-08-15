@@ -15,6 +15,7 @@ namespace Vnb_IPM_2017.Module.BusinessObjects
 {
 
     [DevExpress.Persistent.Base.DefaultClassOptions]
+    [DefaultProperty("TieuDe")]
     public partial class LoaiDuAn : XPObject
     {
         string fTieuDe;
